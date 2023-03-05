@@ -1,0 +1,51 @@
+entity DemoOrm(demo_orm) {
+    codeId String required maxlength(10),
+    codeName String required maxlength(128),
+    itemKey String required maxlength(64),
+    itemValueJa String maxlength(256),
+    itemValueEn String maxlength(256),
+    itemValuePair String maxlength(255),
+    parentCodeId String maxlength(5),
+    parentItemKey String maxlength(128),
+    parentItemKeyBackup String maxlength(45),
+    parentItemKeyNew String maxlength(45),
+    createdTimestamp Instant,
+    updatedTimestamp Instant
+}
+
+entity RdFBatchRegister(rd_f_batch_register) {
+    workflowId String required maxlength(65535),
+    /** 論文DB名 */
+    dbname String required maxlength(45),
+    /** 論文ID */
+    feedId String required maxlength(45),
+    /** 処理内容 */
+    func String required maxlength(20),
+    /** 要求日時 */
+    reqDatetime String required maxlength(14),
+    /** 実行者のシステムID */
+    execUser String required maxlength(45),
+    /** チェックした著者候補のシステムIDの羅列「;」区切り */
+    systemIds TextBlob required,
+    /** 登録時の書き込みモード */
+    mode String required maxlength(20),
+    /** 実行フラグ */
+    done String required maxlength(1),
+    createdTimestamp Instant required,
+    updatedTimestamp Instant required
+}
+
+entity RdFPathTable(rd_f_path_table) {
+    path String maxlength(512),
+    contentsXslt String maxlength(65535),
+    description String maxlength(256)
+}
+
+// Options
+service * with serviceClass
+
+paginate * with pagination
+
+dto * with mapstruct
+
+filter *

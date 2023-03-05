@@ -1,0 +1,204 @@
+<div>
+  <h2 id="page-heading" data-cy="RdFBatchRegisterHeading">
+    <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.home.title">Rd F Batch Registers</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-rd-f-batch-register"
+        [routerLink]="['/rd-f-batch-register/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span class="hidden-sm-down" jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.home.createLabel">
+          Create a new Rd F Batch Register
+        </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <form name="searchForm" class="row row-cols-sm-auto align-items-center">
+    <div class="col-sm-12">
+      <div class="input-group w-100 mt-3">
+        <label class="visually-hidden" for="currentSearch" jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.home.search"
+          >Search for Rd F Batch Register</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="currentSearch"
+          id="currentSearch"
+          name="currentSearch"
+          placeholder="{{ 'bugTrackerJHipsterApp.rdFBatchRegister.home.search' | translate }}"
+        />
+
+        <button class="btn btn-info" (click)="search(currentSearch)">
+          <fa-icon icon="search"></fa-icon>
+        </button>
+
+        <button class="btn btn-danger" (click)="search('')" *ngIf="currentSearch">
+          <fa-icon icon="trash-alt"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="rdFBatchRegisters?.length === 0">
+    <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.home.notFound">No Rd F Batch Registers found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="rdFBatchRegisters && rdFBatchRegisters.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="workflowId">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.workflowId">Workflow Id</span>
+              <fa-icon class="p-1" *ngIf="!currentSearch" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dbname">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.dbname">Dbname</span>
+              <fa-icon class="p-1" *ngIf="!currentSearch" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="feedId">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.feedId">Feed Id</span>
+              <fa-icon class="p-1" *ngIf="!currentSearch" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="func">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.func">Func</span>
+              <fa-icon class="p-1" *ngIf="!currentSearch" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="reqDatetime">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.reqDatetime">Req Datetime</span>
+              <fa-icon class="p-1" *ngIf="!currentSearch" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="execUser">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.execUser">Exec User</span>
+              <fa-icon class="p-1" *ngIf="!currentSearch" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="systemIds">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.systemIds">System Ids</span>
+              <fa-icon class="p-1" *ngIf="!currentSearch" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="mode">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.mode">Mode</span>
+              <fa-icon class="p-1" *ngIf="!currentSearch" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="done">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.done">Done</span>
+              <fa-icon class="p-1" *ngIf="!currentSearch" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdTimestamp">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.createdTimestamp">Created Timestamp</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updatedTimestamp">
+            <div class="d-flex">
+              <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.updatedTimestamp">Updated Timestamp</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rdFBatchRegister of rdFBatchRegisters; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/rd-f-batch-register', rdFBatchRegister.id, 'view']">{{ rdFBatchRegister.id }}</a>
+          </td>
+          <td>{{ rdFBatchRegister.workflowId }}</td>
+          <td>{{ rdFBatchRegister.dbname }}</td>
+          <td>{{ rdFBatchRegister.feedId }}</td>
+          <td>{{ rdFBatchRegister.func }}</td>
+          <td>{{ rdFBatchRegister.reqDatetime }}</td>
+          <td>{{ rdFBatchRegister.execUser }}</td>
+          <td>{{ rdFBatchRegister.systemIds }}</td>
+          <td>{{ rdFBatchRegister.mode }}</td>
+          <td>{{ rdFBatchRegister.done }}</td>
+          <td>{{ rdFBatchRegister.createdTimestamp | formatMediumDatetime }}</td>
+          <td>{{ rdFBatchRegister.updatedTimestamp | formatMediumDatetime }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/rd-f-batch-register', rdFBatchRegister.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/rd-f-batch-register', rdFBatchRegister.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(rdFBatchRegister)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="rdFBatchRegisters && rdFBatchRegisters.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

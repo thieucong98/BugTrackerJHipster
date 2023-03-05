@@ -1,0 +1,27 @@
+{
+  "bugTrackerJHipsterApp": {
+    "rdFPathTable": {
+      "home": {
+        "title": "Rd F Path Tables",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Rd F Path Table",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Rd F Path Table",
+        "search": "Tìm Rd F Path Table",
+        "notFound": "No Rd F Path Tables found"
+      },
+      "created": "Một Rd F Path Table mới được tạo với định danh {{ param }}",
+      "updated": "Một Rd F Path Table cập nhật với định danh {{ param }}",
+      "deleted": "Một Rd F Path Table đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Rd F Path Table {{ id }}?"
+      },
+      "detail": {
+        "title": "Rd F Path Table"
+      },
+      "id": "ID",
+      "path": "Path",
+      "contentsXslt": "Contents Xslt",
+      "description": "Description"
+    }
+  }
+}

@@ -1,0 +1,318 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-demo-orm-heading"
+        data-cy="DemoOrmCreateUpdateHeading"
+        jhiTranslate="bugTrackerJHipsterApp.demoOrm.home.createOrEditLabel"
+      >
+        Create or edit a Demo Orm
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.codeId" for="field_codeId">Code Id</label>
+          <input type="text" class="form-control" name="codeId" id="field_codeId" data-cy="codeId" formControlName="codeId" />
+          <div *ngIf="editForm.get('codeId')!.invalid && (editForm.get('codeId')!.dirty || editForm.get('codeId')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('codeId')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('codeId')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.codeName" for="field_codeName">Code Name</label>
+          <input type="text" class="form-control" name="codeName" id="field_codeName" data-cy="codeName" formControlName="codeName" />
+          <div *ngIf="editForm.get('codeName')!.invalid && (editForm.get('codeName')!.dirty || editForm.get('codeName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('codeName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('codeName')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 128 }"
+            >
+              This field cannot be longer than 128 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.itemKey" for="field_itemKey">Item Key</label>
+          <input type="text" class="form-control" name="itemKey" id="field_itemKey" data-cy="itemKey" formControlName="itemKey" />
+          <div *ngIf="editForm.get('itemKey')!.invalid && (editForm.get('itemKey')!.dirty || editForm.get('itemKey')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('itemKey')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('itemKey')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 64 }"
+            >
+              This field cannot be longer than 64 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.itemValueJa" for="field_itemValueJa">Item Value Ja</label>
+          <input
+            type="text"
+            class="form-control"
+            name="itemValueJa"
+            id="field_itemValueJa"
+            data-cy="itemValueJa"
+            formControlName="itemValueJa"
+          />
+          <div *ngIf="editForm.get('itemValueJa')!.invalid && (editForm.get('itemValueJa')!.dirty || editForm.get('itemValueJa')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('itemValueJa')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 256 }"
+            >
+              This field cannot be longer than 256 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.itemValueEn" for="field_itemValueEn">Item Value En</label>
+          <input
+            type="text"
+            class="form-control"
+            name="itemValueEn"
+            id="field_itemValueEn"
+            data-cy="itemValueEn"
+            formControlName="itemValueEn"
+          />
+          <div *ngIf="editForm.get('itemValueEn')!.invalid && (editForm.get('itemValueEn')!.dirty || editForm.get('itemValueEn')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('itemValueEn')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 256 }"
+            >
+              This field cannot be longer than 256 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.itemValuePair" for="field_itemValuePair"
+            >Item Value Pair</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="itemValuePair"
+            id="field_itemValuePair"
+            data-cy="itemValuePair"
+            formControlName="itemValuePair"
+          />
+          <div
+            *ngIf="
+              editForm.get('itemValuePair')!.invalid && (editForm.get('itemValuePair')!.dirty || editForm.get('itemValuePair')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('itemValuePair')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 255 }"
+            >
+              This field cannot be longer than 255 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.parentCodeId" for="field_parentCodeId"
+            >Parent Code Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="parentCodeId"
+            id="field_parentCodeId"
+            data-cy="parentCodeId"
+            formControlName="parentCodeId"
+          />
+          <div
+            *ngIf="editForm.get('parentCodeId')!.invalid && (editForm.get('parentCodeId')!.dirty || editForm.get('parentCodeId')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('parentCodeId')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 5 }"
+            >
+              This field cannot be longer than 5 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.parentItemKey" for="field_parentItemKey"
+            >Parent Item Key</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="parentItemKey"
+            id="field_parentItemKey"
+            data-cy="parentItemKey"
+            formControlName="parentItemKey"
+          />
+          <div
+            *ngIf="
+              editForm.get('parentItemKey')!.invalid && (editForm.get('parentItemKey')!.dirty || editForm.get('parentItemKey')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('parentItemKey')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 128 }"
+            >
+              This field cannot be longer than 128 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.parentItemKeyBackup" for="field_parentItemKeyBackup"
+            >Parent Item Key Backup</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="parentItemKeyBackup"
+            id="field_parentItemKeyBackup"
+            data-cy="parentItemKeyBackup"
+            formControlName="parentItemKeyBackup"
+          />
+          <div
+            *ngIf="
+              editForm.get('parentItemKeyBackup')!.invalid &&
+              (editForm.get('parentItemKeyBackup')!.dirty || editForm.get('parentItemKeyBackup')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('parentItemKeyBackup')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 45 }"
+            >
+              This field cannot be longer than 45 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.parentItemKeyNew" for="field_parentItemKeyNew"
+            >Parent Item Key New</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="parentItemKeyNew"
+            id="field_parentItemKeyNew"
+            data-cy="parentItemKeyNew"
+            formControlName="parentItemKeyNew"
+          />
+          <div
+            *ngIf="
+              editForm.get('parentItemKeyNew')!.invalid &&
+              (editForm.get('parentItemKeyNew')!.dirty || editForm.get('parentItemKeyNew')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('parentItemKeyNew')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 45 }"
+            >
+              This field cannot be longer than 45 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.createdTimestamp" for="field_createdTimestamp"
+            >Created Timestamp</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_createdTimestamp"
+              data-cy="createdTimestamp"
+              type="datetime-local"
+              class="form-control"
+              name="createdTimestamp"
+              formControlName="createdTimestamp"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.demoOrm.updatedTimestamp" for="field_updatedTimestamp"
+            >Updated Timestamp</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_updatedTimestamp"
+              data-cy="updatedTimestamp"
+              type="datetime-local"
+              class="form-control"
+              name="updatedTimestamp"
+              formControlName="updatedTimestamp"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

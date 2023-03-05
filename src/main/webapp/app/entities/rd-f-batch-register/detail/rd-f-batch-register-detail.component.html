@@ -1,0 +1,122 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="rdFBatchRegister">
+      <h2 data-cy="rdFBatchRegisterDetailsHeading">
+        <span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.detail.title">Rd F Batch Register</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ rdFBatchRegister.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.workflowId">Workflow Id</span></dt>
+        <dd>
+          <span>{{ rdFBatchRegister.workflowId }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.dbname"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.dbname' | translate"
+            >Dbname</span
+          >
+        </dt>
+        <dd>
+          <span>{{ rdFBatchRegister.dbname }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.feedId"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.feedId' | translate"
+            >Feed Id</span
+          >
+        </dt>
+        <dd>
+          <span>{{ rdFBatchRegister.feedId }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.func"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.func' | translate"
+            >Func</span
+          >
+        </dt>
+        <dd>
+          <span>{{ rdFBatchRegister.func }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.reqDatetime"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.reqDatetime' | translate"
+            >Req Datetime</span
+          >
+        </dt>
+        <dd>
+          <span>{{ rdFBatchRegister.reqDatetime }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.execUser"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.execUser' | translate"
+            >Exec User</span
+          >
+        </dt>
+        <dd>
+          <span>{{ rdFBatchRegister.execUser }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.systemIds"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.systemIds' | translate"
+            >System Ids</span
+          >
+        </dt>
+        <dd>
+          <span>{{ rdFBatchRegister.systemIds }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.mode"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.mode' | translate"
+            >Mode</span
+          >
+        </dt>
+        <dd>
+          <span>{{ rdFBatchRegister.mode }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.done"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.done' | translate"
+            >Done</span
+          >
+        </dt>
+        <dd>
+          <span>{{ rdFBatchRegister.done }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.createdTimestamp">Created Timestamp</span></dt>
+        <dd>
+          <span>{{ rdFBatchRegister.createdTimestamp | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.updatedTimestamp">Updated Timestamp</span></dt>
+        <dd>
+          <span>{{ rdFBatchRegister.updatedTimestamp | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/rd-f-batch-register', rdFBatchRegister.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

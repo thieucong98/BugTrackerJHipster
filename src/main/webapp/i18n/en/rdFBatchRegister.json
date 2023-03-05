@@ -1,0 +1,45 @@
+{
+  "bugTrackerJHipsterApp": {
+    "rdFBatchRegister": {
+      "home": {
+        "title": "Rd F Batch Registers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rd F Batch Register",
+        "createOrEditLabel": "Create or edit a Rd F Batch Register",
+        "search": "Search for Rd F Batch Register",
+        "notFound": "No Rd F Batch Registers found"
+      },
+      "created": "A new Rd F Batch Register is created with identifier {{ param }}",
+      "updated": "A Rd F Batch Register is updated with identifier {{ param }}",
+      "deleted": "A Rd F Batch Register is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Rd F Batch Register {{ id }}?"
+      },
+      "detail": {
+        "title": "Rd F Batch Register"
+      },
+      "id": "ID",
+      "workflowId": "Workflow Id",
+      "dbname": "Dbname",
+      "feedId": "Feed Id",
+      "func": "Func",
+      "reqDatetime": "Req Datetime",
+      "execUser": "Exec User",
+      "systemIds": "System Ids",
+      "mode": "Mode",
+      "done": "Done",
+      "createdTimestamp": "Created Timestamp",
+      "updatedTimestamp": "Updated Timestamp",
+      "help": {
+        "dbname": "論文DB名",
+        "feedId": "論文ID",
+        "func": "処理内容",
+        "reqDatetime": "要求日時",
+        "execUser": "実行者のシステムID",
+        "systemIds": "チェックした著者候補のシステムIDの羅列「;」区切り",
+        "mode": "登録時の書き込みモード",
+        "done": "実行フラグ"
+      }
+    }
+  }
+}

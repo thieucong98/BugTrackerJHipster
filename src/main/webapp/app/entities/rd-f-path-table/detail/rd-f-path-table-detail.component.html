@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="rdFPathTable">
+      <h2 data-cy="rdFPathTableDetailsHeading">
+        <span jhiTranslate="bugTrackerJHipsterApp.rdFPathTable.detail.title">Rd F Path Table</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ rdFPathTable.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.rdFPathTable.path">Path</span></dt>
+        <dd>
+          <span>{{ rdFPathTable.path }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.rdFPathTable.contentsXslt">Contents Xslt</span></dt>
+        <dd>
+          <span>{{ rdFPathTable.contentsXslt }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.rdFPathTable.description">Description</span></dt>
+        <dd>
+          <span>{{ rdFPathTable.description }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/rd-f-path-table', rdFPathTable.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+{
+  "bugTrackerJHipsterApp": {
+    "demoOrm": {
+      "home": {
+        "title": "Demo Orms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Demo Orm",
+        "createOrEditLabel": "Create or edit a Demo Orm",
+        "search": "Search for Demo Orm",
+        "notFound": "No Demo Orms found"
+      },
+      "created": "A new Demo Orm is created with identifier {{ param }}",
+      "updated": "A Demo Orm is updated with identifier {{ param }}",
+      "deleted": "A Demo Orm is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Demo Orm {{ id }}?"
+      },
+      "detail": {
+        "title": "Demo Orm"
+      },
+      "id": "ID",
+      "codeId": "Code Id",
+      "codeName": "Code Name",
+      "itemKey": "Item Key",
+      "itemValueJa": "Item Value Ja",
+      "itemValueEn": "Item Value En",
+      "itemValuePair": "Item Value Pair",
+      "parentCodeId": "Parent Code Id",
+      "parentItemKey": "Parent Item Key",
+      "parentItemKeyBackup": "Parent Item Key Backup",
+      "parentItemKeyNew": "Parent Item Key New",
+      "createdTimestamp": "Created Timestamp",
+      "updatedTimestamp": "Updated Timestamp"
+    }
+  }
+}

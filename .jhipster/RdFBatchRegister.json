@@ -1,0 +1,88 @@
+{
+  "applications": "*",
+  "changelogDate": "20230305125212",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "rd_f_batch_register",
+  "fields": [
+    {
+      "fieldName": "workflowId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "dbname",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "45",
+      "javadoc": "論文DB名"
+    },
+    {
+      "fieldName": "feedId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "45",
+      "javadoc": "論文ID"
+    },
+    {
+      "fieldName": "func",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "20",
+      "javadoc": "処理内容"
+    },
+    {
+      "fieldName": "reqDatetime",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "14",
+      "javadoc": "要求日時"
+    },
+    {
+      "fieldName": "execUser",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "45",
+      "javadoc": "実行者のシステムID"
+    },
+    {
+      "fieldName": "systemIds",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "fieldValidateRules": ["required"],
+      "javadoc": "チェックした著者候補のシステムIDの羅列「;」区切り"
+    },
+    {
+      "fieldName": "mode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "20",
+      "javadoc": "登録時の書き込みモード"
+    },
+    {
+      "fieldName": "done",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "1",
+      "javadoc": "実行フラグ"
+    },
+    {
+      "fieldName": "createdTimestamp",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedTimestamp",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "RdFBatchRegister",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

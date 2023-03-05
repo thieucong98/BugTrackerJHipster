@@ -1,0 +1,36 @@
+{
+  "bugTrackerJHipsterApp": {
+    "demoOrm": {
+      "home": {
+        "title": "Demo Orms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Thêm mới một Demo Orm",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Demo Orm",
+        "search": "Tìm Demo Orm",
+        "notFound": "No Demo Orms found"
+      },
+      "created": "Một Demo Orm mới được tạo với định danh {{ param }}",
+      "updated": "Một Demo Orm cập nhật với định danh {{ param }}",
+      "deleted": "Một Demo Orm đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Demo Orm {{ id }}?"
+      },
+      "detail": {
+        "title": "Demo Orm"
+      },
+      "id": "ID",
+      "codeId": "Code Id",
+      "codeName": "Code Name",
+      "itemKey": "Item Key",
+      "itemValueJa": "Item Value Ja",
+      "itemValueEn": "Item Value En",
+      "itemValuePair": "Item Value Pair",
+      "parentCodeId": "Parent Code Id",
+      "parentItemKey": "Parent Item Key",
+      "parentItemKeyBackup": "Parent Item Key Backup",
+      "parentItemKeyNew": "Parent Item Key New",
+      "createdTimestamp": "Created Timestamp",
+      "updatedTimestamp": "Updated Timestamp"
+    }
+  }
+}

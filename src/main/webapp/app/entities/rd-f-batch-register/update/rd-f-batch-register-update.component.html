@@ -1,0 +1,348 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-rd-f-batch-register-heading"
+        data-cy="RdFBatchRegisterCreateUpdateHeading"
+        jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.home.createOrEditLabel"
+      >
+        Create or edit a Rd F Batch Register
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.workflowId" for="field_workflowId"
+            >Workflow Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="workflowId"
+            id="field_workflowId"
+            data-cy="workflowId"
+            formControlName="workflowId"
+          />
+          <div *ngIf="editForm.get('workflowId')!.invalid && (editForm.get('workflowId')!.dirty || editForm.get('workflowId')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('workflowId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('workflowId')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 65535 }"
+            >
+              This field cannot be longer than 65535 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.dbname"
+            for="field_dbname"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.dbname' | translate"
+            >Dbname</label
+          >
+          <input type="text" class="form-control" name="dbname" id="field_dbname" data-cy="dbname" formControlName="dbname" />
+          <div *ngIf="editForm.get('dbname')!.invalid && (editForm.get('dbname')!.dirty || editForm.get('dbname')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('dbname')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('dbname')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 45 }"
+            >
+              This field cannot be longer than 45 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.feedId"
+            for="field_feedId"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.feedId' | translate"
+            >Feed Id</label
+          >
+          <input type="text" class="form-control" name="feedId" id="field_feedId" data-cy="feedId" formControlName="feedId" />
+          <div *ngIf="editForm.get('feedId')!.invalid && (editForm.get('feedId')!.dirty || editForm.get('feedId')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('feedId')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('feedId')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 45 }"
+            >
+              This field cannot be longer than 45 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.func"
+            for="field_func"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.func' | translate"
+            >Func</label
+          >
+          <input type="text" class="form-control" name="func" id="field_func" data-cy="func" formControlName="func" />
+          <div *ngIf="editForm.get('func')!.invalid && (editForm.get('func')!.dirty || editForm.get('func')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('func')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('func')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.reqDatetime"
+            for="field_reqDatetime"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.reqDatetime' | translate"
+            >Req Datetime</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="reqDatetime"
+            id="field_reqDatetime"
+            data-cy="reqDatetime"
+            formControlName="reqDatetime"
+          />
+          <div *ngIf="editForm.get('reqDatetime')!.invalid && (editForm.get('reqDatetime')!.dirty || editForm.get('reqDatetime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('reqDatetime')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('reqDatetime')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 14 }"
+            >
+              This field cannot be longer than 14 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.execUser"
+            for="field_execUser"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.execUser' | translate"
+            >Exec User</label
+          >
+          <input type="text" class="form-control" name="execUser" id="field_execUser" data-cy="execUser" formControlName="execUser" />
+          <div *ngIf="editForm.get('execUser')!.invalid && (editForm.get('execUser')!.dirty || editForm.get('execUser')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('execUser')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('execUser')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 45 }"
+            >
+              This field cannot be longer than 45 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.systemIds"
+            for="field_systemIds"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.systemIds' | translate"
+            >System Ids</label
+          >
+          <textarea class="form-control" name="systemIds" id="field_systemIds" data-cy="systemIds" formControlName="systemIds"></textarea>
+          <div *ngIf="editForm.get('systemIds')!.invalid && (editForm.get('systemIds')!.dirty || editForm.get('systemIds')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('systemIds')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.mode"
+            for="field_mode"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.mode' | translate"
+            >Mode</label
+          >
+          <input type="text" class="form-control" name="mode" id="field_mode" data-cy="mode" formControlName="mode" />
+          <div *ngIf="editForm.get('mode')!.invalid && (editForm.get('mode')!.dirty || editForm.get('mode')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('mode')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('mode')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.done"
+            for="field_done"
+            [ngbTooltip]="'bugTrackerJHipsterApp.rdFBatchRegister.help.done' | translate"
+            >Done</label
+          >
+          <input type="text" class="form-control" name="done" id="field_done" data-cy="done" formControlName="done" />
+          <div *ngIf="editForm.get('done')!.invalid && (editForm.get('done')!.dirty || editForm.get('done')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('done')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('done')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 1 }"
+            >
+              This field cannot be longer than 1 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.createdTimestamp" for="field_createdTimestamp"
+            >Created Timestamp</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_createdTimestamp"
+              data-cy="createdTimestamp"
+              type="datetime-local"
+              class="form-control"
+              name="createdTimestamp"
+              formControlName="createdTimestamp"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div
+            *ngIf="
+              editForm.get('createdTimestamp')!.invalid &&
+              (editForm.get('createdTimestamp')!.dirty || editForm.get('createdTimestamp')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('createdTimestamp')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('createdTimestamp')?.errors?.datetimelocal"
+              jhiTranslate="entity.validation.datetimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="bugTrackerJHipsterApp.rdFBatchRegister.updatedTimestamp" for="field_updatedTimestamp"
+            >Updated Timestamp</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_updatedTimestamp"
+              data-cy="updatedTimestamp"
+              type="datetime-local"
+              class="form-control"
+              name="updatedTimestamp"
+              formControlName="updatedTimestamp"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div
+            *ngIf="
+              editForm.get('updatedTimestamp')!.invalid &&
+              (editForm.get('updatedTimestamp')!.dirty || editForm.get('updatedTimestamp')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('updatedTimestamp')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('updatedTimestamp')?.errors?.datetimelocal"
+              jhiTranslate="entity.validation.datetimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

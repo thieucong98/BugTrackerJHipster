@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="demoOrm">
+      <h2 data-cy="demoOrmDetailsHeading"><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.detail.title">Demo Orm</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ demoOrm.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.codeId">Code Id</span></dt>
+        <dd>
+          <span>{{ demoOrm.codeId }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.codeName">Code Name</span></dt>
+        <dd>
+          <span>{{ demoOrm.codeName }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.itemKey">Item Key</span></dt>
+        <dd>
+          <span>{{ demoOrm.itemKey }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.itemValueJa">Item Value Ja</span></dt>
+        <dd>
+          <span>{{ demoOrm.itemValueJa }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.itemValueEn">Item Value En</span></dt>
+        <dd>
+          <span>{{ demoOrm.itemValueEn }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.itemValuePair">Item Value Pair</span></dt>
+        <dd>
+          <span>{{ demoOrm.itemValuePair }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.parentCodeId">Parent Code Id</span></dt>
+        <dd>
+          <span>{{ demoOrm.parentCodeId }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.parentItemKey">Parent Item Key</span></dt>
+        <dd>
+          <span>{{ demoOrm.parentItemKey }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.parentItemKeyBackup">Parent Item Key Backup</span></dt>
+        <dd>
+          <span>{{ demoOrm.parentItemKeyBackup }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.parentItemKeyNew">Parent Item Key New</span></dt>
+        <dd>
+          <span>{{ demoOrm.parentItemKeyNew }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.createdTimestamp">Created Timestamp</span></dt>
+        <dd>
+          <span>{{ demoOrm.createdTimestamp | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="bugTrackerJHipsterApp.demoOrm.updatedTimestamp">Updated Timestamp</span></dt>
+        <dd>
+          <span>{{ demoOrm.updatedTimestamp | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/demo-orm', demoOrm.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
